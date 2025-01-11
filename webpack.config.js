@@ -10,7 +10,7 @@ module.exports = {
   output: {
     clean: true,
     filename: '[name].bundle.js',
-    publicPath: '/god-of-war-ragnarok/',
+    publicPath: process.env.NODE_ENV === 'production' ? '/god-of-war-ragnarok/' : '/',
     path: path.resolve(__dirname, 'dist'),
   },
   mode: 'development',
