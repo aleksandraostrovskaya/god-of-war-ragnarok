@@ -6,6 +6,7 @@ import 'swiper/css';
 
 import Swiper from 'swiper';
 import { Navigation, Autoplay } from 'swiper/modules';
+import { languages } from './languages'
 
 // Swiper
 
@@ -174,3 +175,36 @@ function handleScroll () {
     if (scrollY > sec.offsetTop - innerHeight / 1.5) sec.classList.remove('hidden');
   });
 };
+
+// Languages
+
+const language = document.querySelectorAll('.language')
+
+language.forEach(item => item.addEventListener('click', toggleLanguage))
+
+function toggleLanguage ({target}) {
+  const {lang} = target.dataset
+
+  if (!lang) return 
+
+  localStorage.setItem('lang', lang)
+
+  setText()
+}
+
+function setText () {
+  const lang = localStorage.getItem('lang') || 'en'
+  const currentLang = document.querySelectorAll('.current-lang')
+
+  const content = languages[lang]
+
+  Object.entries(content).forEach(([key, value]) => {
+    const items = document.querySelectorAll( `[data-text="${key}"]`)
+    items.forEach(item => item.innerHTML = value)
+  })
+
+  currentLang.forEach(item => item.innerText = lang === 'en' ? 'English' : 'Ukrainian')
+  
+}
+
+setText()
