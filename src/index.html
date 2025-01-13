@@ -95,7 +95,7 @@
 						three summers, is drawing to a close which will begin the prophesied Ragnarök.
 					</div>
 
-					<div data-text="button" class="description-button">
+					<div data-text="button" class="description-button button-buy" data-value="0">
 						buy now
 					</div>
 				</div>
@@ -120,7 +120,7 @@
 							<li>Trigger effect required</li>
 						</ul>
 						<div class="editions-item__price">19.99$</div>
-						<div data-text="button" class="editions-item__btn button-buy">buy now</div>
+						<div data-text="button" class="editions-item__btn button-buy" data-value="0">buy now</div>
 					</div>
 					<div class="editions-item">
 						<div class="editions-item__img" style="background-image: url(./assets/images/card2.jpg);"></div>
@@ -134,7 +134,7 @@
 							<li>Trigger effect required</li>
 						</ul>
 						<div class="editions-item__price">18.99$</div>
-						<div data-text="button" class="editions-item__btn button-buy">buy now</div>
+						<div data-text="button" class="editions-item__btn button-buy" data-value="1">buy now</div>
 					</div>
 					<div class="editions-item">
 						<div class="editions-item__img" style="background-image: url(./assets/images/card3.png);"></div>
@@ -148,7 +148,7 @@
 							<li>Official digital soundtrack</li>
 						</ul>
 						<div class="editions-item__price">29.99$</div>
-						<div data-text="button" class="editions-item__btn button-buy">buy now</div>
+						<div data-text="button" class="editions-item__btn button-buy" data-value="2">buy now</div>
 					</div>
 
 				</div>
@@ -172,7 +172,7 @@
 						<div class="dual-description__price">
 							35.99$
 						</div>
-						<div data-text="dualBtn" class="dual-description__button">buy dualsense with a game</div>
+						<div data-text="dualBtn" class="dual-description__button button-buy" data-value="4">buy dualsense with a game</div>
 					</div>
 				</div>
 				<div class="dual-img">
@@ -254,7 +254,7 @@
 								<li><span class="violet">DEDICATED VIDEO RAM</span>: 6 GB</li>
 							</ul>
 
-							<div data-text="button" class="explore-button">buy now</div>
+							<div data-text="button" class="explore-button button-buy" data-value="1">buy now</div>
 						</div>
 
 					</div>
@@ -316,7 +316,7 @@
 								</li>
 							</ul>
 
-							<div data-text="button" class="explore-button">buy now</div>
+							<div data-text="button" class="explore-button button-buy" data-value="3">buy now</div>
 						</div>
 					</div>
 				</div>
@@ -524,6 +524,58 @@
 					href="https://github.com/aleksandraostrovskaya">Aleksandra</a>. All rights reserved</div>
 		</div>
 	</footer>
+
+	<div class="modal">
+		<div class="modal-wrapper";">
+			<div class="modal-title">
+				GOD OF WAR RAGNAROK
+			</div>
+			<div class="modal-subtitle"></div>
+			<form class="form">
+				<div class="form-group full">
+					<label for="card">CREDIT CARD:</label>
+					<input type="text" required placeholder="0000 0000 0000 0000" id="card">
+				</div>
+
+				<div class="form-group">
+					<label for="expire">Expire:</label>
+					<input type="text" required placeholder="mm/yy" id="expire">
+				</div>
+
+				<div class="form-group">
+					<label for="ccv">CCV:</label>
+					<input type="text" required placeholder="***" id="ccv">
+				</div>
+
+				<div class="form-group full">
+					<label for="instant">INSTANT:</label>
+					<input type="text" required placeholder="John Doe" id="instant">
+				</div>
+
+				<div class="form-checkbox flex flex-centre">
+					<input type="checkbox" name="agreement" id="agreement" required>
+					<span class="check"></span>
+					<label for="agreement">I agree with the <span class="red">rules</span> of the site</label>
+				</div>
+
+				<div class="modal-description">
+					Download of this product is subject to the PlayStation Network Terms of Service and our Software Usage Terms
+					plus any specific additional conditions applying to this product. If you do not wish to accept these terms, do
+					not download this product. See Terms of Service for more important information.
+				</div>
+
+				<div class="modal-total flex flex-center">
+					<div class="modal-total__text">YOUR TOTAL SUMMA:</div>
+					<div class="modal-total__price"></div>
+				</div>
+				<button type="submit" class="modal-submit">buy now</button>
+			</form>
+
+			<div class="modal-close">🗙</div>
+		</div>
+	</div>
+
+	<div class="overlay"></div>
 
 </body>
 

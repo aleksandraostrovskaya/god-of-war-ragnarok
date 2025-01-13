@@ -208,3 +208,57 @@ function setText () {
 }
 
 setText()
+
+// Modal 
+
+const values = [
+  {
+    price: 19.99,
+    subtitle: "Standard Edition"
+  },
+  {
+    price: 18.99,
+    subtitle: "Standard Edition"
+  },
+  {
+    price: 29.99,
+    subtitle: "Deluxe Edition"
+  },
+  {
+    price: 15.99,
+    subtitle: "Limited Edition"
+  },
+  {
+    price: 35.99,
+    subtitle: "Limited Edition + Dualsense"
+  },
+
+]
+
+const buyButtons = document.querySelectorAll('.button-buy')
+const modal = document.querySelector('.modal')
+const modalSubtitle = document.querySelector('.modal-subtitle')
+const modalPrice = document.querySelector('.modal-total__price')
+const modalClose = document.querySelector('.modal-close')
+const overlay = document.querySelector('.overlay')
+
+buyButtons.forEach(btn => btn.addEventListener('click', openModal))
+modalClose.addEventListener('click', closeModal)
+
+function openModal ({currentTarget}) {
+  const {value} = currentTarget.dataset
+
+  if (!value) return
+
+  const {price, subtitle} = values[value]
+
+  modalSubtitle.innerText = subtitle
+  modalPrice.innerText = `${price}$`
+  modal.classList.add('opened')
+  overlay.classList.add('opened')
+}
+
+function closeModal () {
+  modal.classList.remove('opened')
+  overlay.classList.remove('opened')
+}
